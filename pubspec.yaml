@@ -75,6 +75,9 @@ dependencies:
   # Onboarding
   smooth_page_indicator: ^1.2.1
 
+  #Responsiveness
+  responsive_framework: ^1.5.1
+
 dev_dependencies:
   # Testing & Linting
   flutter_test:

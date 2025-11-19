@@ -33,6 +33,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     return Scaffold(
       body: SafeArea(
         child: PageView(
+          controller: pageController,
           children: [
             OnboardingComponent(
               pageIndex: 0,
@@ -44,7 +45,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               onNextPressed: () {},
             ),
             OnboardingComponent(
-              pageIndex: 0,
+              pageIndex: 1,
               svgAsset: 'assets/svg/second_onboarding.svg',
               title: 'Order Your Favorite Food',
               description:
@@ -53,7 +54,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               onNextPressed: () {},
             ),
             OnboardingComponent(
-              pageIndex: 0,
+              pageIndex: 2,
               svgAsset: 'assets/svg/third_onboarding.svg',
               title: 'Fast Delivery',
               description:
