@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:food_swift/core/helpers/extension.dart';
+import 'package:food_swift/core/routing/routes.dart';
+import 'package:food_swift/core/theming/app_colors.dart';
 import 'package:food_swift/features/onboarding/ui/widgets/onboarding_component.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -13,12 +16,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   static PageController pageController = PageController(initialPage: 0);
   @override
   Widget build(BuildContext context) {
+    final isLightMode = Theme.of(context).brightness == Brightness.light;
     final Widget pageIndicator = SmoothPageIndicator(
       controller: pageController,
       count: 3,
       effect: ExpandingDotsEffect(
-        activeDotColor: Colors.black,
-        dotColor: Colors.grey,
+        activeDotColor: isLightMode ? Colors.black : DarkAppColors.textPrimary,
+        dotColor: LightAppColors.textSecondary,
         dotHeight: 8,
         dotWidth: 8,
       ),
@@ -60,7 +64,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               description:
                   'Track your order in real-time and get hot, fresh food delivered to your doorstep',
               pageIndicator: pageIndicator,
-              onNextPressed: () {},
+              onNextPressed: () {
+                context.pushNamedAndRemoveUntil(
+                  Routes.login,
+                  predicate: (route) => route.isFirst,
+                );
+              },
             ),
           ],
         ),

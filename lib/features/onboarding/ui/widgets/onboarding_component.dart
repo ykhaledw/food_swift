@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:food_swift/core/helpers/extension.dart';
+import 'package:food_swift/core/routing/routes.dart';
 import 'package:food_swift/core/shared_widgets/app_button.dart';
 import 'package:food_swift/core/theming/text_styles.dart';
 
@@ -29,7 +31,12 @@ class OnboardingComponent extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                context.pushNamedAndRemoveUntil(
+                  Routes.login,
+                  predicate: (route) => route.isFirst,
+                );
+              },
               child: Align(
                 alignment: AlignmentDirectional.topEnd,
                 child: Text('Skip', style: TextStyles.font16BlackBold),

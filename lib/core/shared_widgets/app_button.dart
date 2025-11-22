@@ -31,7 +31,7 @@ class AppButton extends StatelessWidget {
         width: buttonWidth ?? double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius ?? 12),
-          color: buttonColor ?? AppColors.primary,
+          color: buttonColor ?? LightAppColors.primary,
         ),
         padding: EdgeInsets.symmetric(vertical: 10),
         child: Center(
