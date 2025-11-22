@@ -9,7 +9,6 @@ class TextStyles {
   static TextStyle font28BlackBold = TextStyle(
     fontSize: 28,
     fontWeight: FontWeightHelper.bold,
-    color: Colors.black,
   );
   static TextStyle font24BlackBold = TextStyle(
     fontSize: 24,
